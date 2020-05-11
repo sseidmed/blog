@@ -47,7 +47,7 @@ RSpec.describe "CustomersControllers", type: :request do
     end
   end
 
-#error here
+#fixed customers_controller.rb def create 
   describe "post customers_path with invalid data" do
     it "does not save a new entry or redirect" do
         customer_attributes = FactoryBot.attributes_for(:customer)
@@ -56,6 +56,7 @@ RSpec.describe "CustomersControllers", type: :request do
     expect(response.status).to eq(200)
     end
   end
+
 #completed
   describe "put customer_path with valid data" do
     it "updates an entry and redirects to the show path for the customer" do
@@ -67,7 +68,7 @@ RSpec.describe "CustomersControllers", type: :request do
     end
   end
 
-#complete this, has error
+#completed after fixing def update in customers_controller.rb
   describe "put customer_path with invalid data" do
     it "does not update the customer record or redirect" do
       customer = FactoryBot.create(:customer)
