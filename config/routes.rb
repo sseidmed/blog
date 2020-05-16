@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+  resources :orders
 
   # get '/pages', to: 'pages#index', as: 'pages'
   # post '/pages', to: 'pages#create'
