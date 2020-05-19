@@ -3,8 +3,10 @@ class Order < ApplicationRecord
   CUSTOMERS = [1, 2, 3, 4]
   validates :product_name, presence: true
   validates :product_count, presence: true
+  validates :product_count, numericality: { only_integer: true }
   validates :product_count, numericality: { greater_than_or_equal_to: 1}
   validates :customer, presence: true
+  validates_presence_of :customer
 
   def self.customers
    two_d = []

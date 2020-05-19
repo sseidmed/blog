@@ -18,7 +18,7 @@
       <tr>
         <td><%= order.product_name %></td>
         <td><%= order.product_count %></td>
-        <td><%= order.customer.full_name %></td>
+        <td><%= order.customer.full_name %></td>    
         <td><%= order.customer_id %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
@@ -28,6 +28,10 @@
   </tbody>
 </table>
 
+
+
+
 <br>
 
-<%= link_to 'New Item', new_order_path %>
+<%= link_to 'New Item', new_order_path %><br>
+<h5><%= link_to 'List of Customers', customers_path %></h5>
