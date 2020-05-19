@@ -22,5 +22,20 @@
   <%= @customer.email %>
 </p>
 
+<h3> Orders for <%= @customer.full_name %></h3>
+
+
+<div id="orders">
+  <% if @customer.orders.present? %>
+    <p>
+      <% @customer.orders.each do |c| %>
+        <%= c.product_name  %>
+        (Quantity: <%= c.product_count %>)<br>
+      <% end %>
+    </p>
+  <% end %>
+<br>
+
+
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>
