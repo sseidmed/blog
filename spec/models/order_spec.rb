@@ -29,6 +29,11 @@ RSpec.describe Order, type: :model do
     expect(subject).to_not be_valid
   end
 
+  it "is not valid without a customer" do
+  subject.customer=nil
+    expect(subject).to_not be_valid
+  end
+
 
 
 
