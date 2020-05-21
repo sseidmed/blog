@@ -42,7 +42,7 @@ RSpec.describe "OrdersControllers", type: :request do
   describe "post orders_path with valid data" do
     it "saves a new entry and redirects to the show path for the entry" do
       order_attributes = FactoryBot.attributes_for(:order)
-      expect { post orders_path, {order: order_attributes}}.to change(Order, :count)
+      expect { post orders_path, params: {order: order_attributes}}.to change(Order, :count)
     expect(response).to redirect_to order_path(id: Order.last.id)
     end
   end
@@ -70,9 +70,9 @@ RSpec.describe "OrdersControllers", type: :request do
   describe "put order_path with invalid data" do
     it "does not update the customer record or redirect" do
       order = FactoryBot.create(:order)
-      put order_path(id: order.id), params: {order: { product_count: "123"}}
+      put order_path(id: order.id), params: {order: { product_count: "somt_text"}}
       order.reload
-      expect(order.product_count).to_not eq("123")
+      expect(order.product_count).to_not eq("some_text")
    expect(response.status).to eq(200)
   end
   end
